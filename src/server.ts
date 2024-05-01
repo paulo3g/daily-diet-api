@@ -1,11 +1,10 @@
 import fastify from 'fastify'
 import { env } from './env'
+import cookie from '@fastify/cookie'
 
 const app = fastify()
 
-app.get('/hello', () => {
-  return 'Hello World'
-})
+app.register(cookie)
 
 app
   .listen({
